@@ -94,10 +94,10 @@ void CHTTP::response(QNetworkReply* reply){
 		qDebug() << "Unknown State";
 }
 
-void CHTTP::doGet(QUrl& url){
+void CHTTP::doGet(const QUrl& url){
 	manager->get(QNetworkRequest(url));
 }
-void CHTTP::doPost(QUrl& url, QUrlQuery params){
+void CHTTP::doPost(const QUrl& url, QUrlQuery params){
 	QNetworkRequest req;
 
 	//Set Headers

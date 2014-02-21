@@ -14,92 +14,97 @@
         <translation>Neuen Account erstellen?</translation>
     </message>
     <message>
-        <location filename="../cGui.cpp" line="167"/>
+        <location filename="../cGui.cpp" line="171"/>
         <source>&amp;Menu</source>
         <translation>&amp;Menü</translation>
     </message>
     <message>
-        <location filename="../cGui.cpp" line="168"/>
+        <location filename="../cGui.cpp" line="172"/>
         <source>&amp;Language</source>
         <translation>&amp;Sprache</translation>
     </message>
     <message>
-        <location filename="../cGui.cpp" line="169"/>
+        <location filename="../cGui.cpp" line="173"/>
         <source>&amp;Account</source>
         <translation>&amp;Account</translation>
     </message>
     <message>
-        <location filename="../cGui.cpp" line="170"/>
+        <location filename="../cGui.cpp" line="174"/>
         <source>&amp;People</source>
         <translation>&amp;Personen</translation>
     </message>
     <message>
-        <location filename="../cGui.cpp" line="172"/>
+        <location filename="../cGui.cpp" line="177"/>
         <source>&amp;Create</source>
         <translation>&amp;Erstellen</translation>
     </message>
     <message>
-        <location filename="../cGui.cpp" line="173"/>
+        <location filename="../cGui.cpp" line="178"/>
         <source>&amp;Manage</source>
         <translation>&amp;Verwalten</translation>
     </message>
     <message>
-        <location filename="../cGui.cpp" line="174"/>
+        <location filename="../cGui.cpp" line="179"/>
         <source>Close Application</source>
         <translation>Schließen</translation>
     </message>
     <message>
-        <location filename="../cGui.cpp" line="175"/>
+        <location filename="../cGui.cpp" line="180"/>
         <source>&amp;Edit</source>
         <translation>&amp;Bearbeiten</translation>
     </message>
     <message>
-        <location filename="../cGui.cpp" line="176"/>
+        <location filename="../cGui.cpp" line="181"/>
         <source>&amp;English</source>
         <translation>&amp;English</translation>
     </message>
     <message>
-        <location filename="../cGui.cpp" line="177"/>
+        <location filename="../cGui.cpp" line="182"/>
         <source>&amp;Deutsch</source>
         <translation>&amp;Deutsch</translation>
     </message>
     <message>
-        <location filename="../cGui.cpp" line="178"/>
+        <location filename="../cGui.cpp" line="175"/>
+        <location filename="../cGui.cpp" line="183"/>
         <source>A&amp;bout</source>
         <translation>&amp;Über</translation>
     </message>
     <message>
-        <location filename="../cGui.cpp" line="184"/>
-        <source>Try to login on Webservice...</source>
+        <location filename="../cGui.cpp" line="189"/>
+        <source>Try to login onto Webservice...</source>
         <translation>Versuche Anmeldung am Webservice... </translation>
     </message>
     <message>
-        <location filename="../cGui.cpp" line="190"/>
+        <source>Try to login on Webservice...</source>
+        <translation type="obsolete">Versuche Anmeldung am Webservice... </translation>
+    </message>
+    <message>
+        <location filename="../cGui.cpp" line="195"/>
         <source>Invalid E-Mail or Password...</source>
         <translation>E-Mail oder Passwort nicht korrekt...</translation>
     </message>
     <message>
-        <location filename="../cGui.cpp" line="196"/>
+        <location filename="../cGui.cpp" line="201"/>
         <source>Login successful...</source>
         <translation>Login erfolgreich...</translation>
     </message>
     <message>
-        <location filename="../cGui.cpp" line="229"/>
+        <location filename="../cGui.cpp" line="234"/>
         <source>Network is currently not available... Retry in 5 seconds</source>
         <translation>Das Netzwerk ist momentan nicht verfügbar... Neuer Versuch in 5 Sekunden</translation>
     </message>
     <message>
-        <location filename="../cGui.cpp" line="253"/>
+        <location filename="../cGui.cpp" line="258"/>
         <source>Nobody has birthday today</source>
         <translation>Heute hat niemand Geburtstag</translation>
     </message>
     <message>
-        <location filename="../cGui.cpp" line="295"/>
+        <location filename="../cGui.cpp" line="300"/>
         <source>About</source>
         <translation>Über</translation>
     </message>
     <message>
-        <location filename="../cGui.cpp" line="296"/>
+        <location filename="../cGui.cpp" line="301"/>
         <source>Written by</source>
         <translation>Programmierer</translation>
     </message>

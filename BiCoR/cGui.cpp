@@ -108,11 +108,15 @@ void CGUI::createMenu(void){
 	language->addAction(actLangGerman);
 	language->addAction(actLangEnglish);
 
+	about = new QMenu(this);
+	about->addAction(actAbout);
+
 	menuBar->addMenu(menu);
 	menuBar->addMenu(account);
 	menuBar->addMenu(people);
 	menuBar->addMenu(language);
-	menuBar->addAction(actAbout);
+	menuBar->addMenu(about);
+
 	setMenuBar(menuBar);
 }
 void CGUI::createWidgets(void){
@@ -168,6 +172,7 @@ void CGUI::syncGUI(void){
 	language->setTitle(tr("&Language"));
 	account->setTitle(tr("&Account"));
 	people->setTitle(tr("&People"));
+	about->setTitle(tr("A&bout"));
 
 	actNewAccount->setText(tr("&Create"));
 	actAddUser->setText(tr("&Manage"));

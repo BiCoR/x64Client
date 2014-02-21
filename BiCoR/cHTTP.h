@@ -58,8 +58,8 @@ class CHTTP : public QObject{
 
 	private:
 		void replyInfo(QNetworkReply*,bool detail);
-		void doGet(QUrl& url);
-		void doPost(QUrl& url, QUrlQuery data);
+		void doGet(const QUrl& url);
+		void doPost(const QUrl& url, QUrlQuery data);
 		QUrl redirectUrl(const QUrl& possibleRedirectUrl, const QUrl& oldRedirectUrl) const;
 
 

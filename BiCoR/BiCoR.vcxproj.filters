@@ -40,11 +40,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="lang\bicor_de.ts">
-      <Filter>Translation Files</Filter>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <CustomBuild Include="cApplication.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
@@ -62,6 +57,15 @@
     </CustomBuild>
     <CustomBuild Include="cWebView.h">
       <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="cPerson.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="cXMLParser.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="lang\bicor_de.ts">
+      <Filter>Translation Files</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
@@ -128,13 +132,5 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="cPerson.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="cXMLParser.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

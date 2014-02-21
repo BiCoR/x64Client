@@ -5,6 +5,6 @@
 
 #include "cWebView.h"
 
-void CWebView::closeEvent(QCloseEvent* e){
+void CWebView::closeEvent(QCloseEvent*){
 	emit webViewClosed();
 }

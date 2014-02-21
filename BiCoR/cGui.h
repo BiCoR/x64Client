@@ -77,6 +77,7 @@ class CGUI : public QMainWindow{
 		QMenu* account;
 		QMenu* people;
 		QMenu* language;
+		QMenu* about;
 		
 		QActionGroup* ag;
 		QAction* actLangGerman;

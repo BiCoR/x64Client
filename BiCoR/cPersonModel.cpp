@@ -40,7 +40,7 @@ QVariant CPersonModel::data(const QModelIndex &index, int role) const
 		else                
 			return QColor(Qt::darkRed);	
 	} 
-	else if(role == Qt::ItemDataRole::FontRole){
+	else if(role == Qt::FontRole){
 		if (p->hasBirthday())                
 			return QFont("Arial",14);
 		else if(p->birthdayIsOver())
