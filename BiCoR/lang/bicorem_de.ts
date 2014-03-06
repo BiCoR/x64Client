@@ -70,11 +70,15 @@
     </message>
     <message>
         <location filename="../cGui.cpp" line="266"/>
-        <source>Today&apos;s birthdays: </source>
-        <translation>Heutige Geburtstage:</translation>
+        <source>Today&apos;s birthdays</source>
+        <translation>Heutige Geburtstage</translation>
     </message>
     <message>
-        <location filename="../cGui.cpp" line="309"/>
+        <source>Today&apos;s birthdays: </source>
+        <translation type="obsolete">Heutige Geburtstage:</translation>
+    </message>
+    <message>
+        <location filename="../cGui.cpp" line="316"/>
         <source>Contact us</source>
         <translation>Kontakt</translation>
     </message>
@@ -114,12 +118,12 @@
         <translation>Heute hat niemand Geburtstag</translation>
     </message>
     <message>
-        <location filename="../cGui.cpp" line="308"/>
+        <location filename="../cGui.cpp" line="325"/>
         <source>About</source>
         <translation>Über</translation>
     </message>
     <message>
-        <location filename="../cGui.cpp" line="309"/>
+        <location filename="../cGui.cpp" line="316"/>
         <source>Written by</source>
         <translation>Entwickler</translation>
     </message>

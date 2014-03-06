@@ -12,7 +12,7 @@ Translators CApplication::translators;
 CApplication::CApplication(int& argc, char* argv[])
 	: QApplication(argc, argv)
 {
-	QIcon icon("bicorem.png");
+	QIcon icon("./bicorem.png");
 	setWindowIcon(icon);
 }
 

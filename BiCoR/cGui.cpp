@@ -263,7 +263,7 @@ void CGUI::checkBirthdayMessage(void){
 	if(msg.isEmpty())
 		statusBar()->showMessage(tr("Nobody has birthday today"));
 	else{
-		msg.push_front(tr("Today's birthdays: "));
+		msg.push_front(tr("Today's birthdays") + ": ");
 		statusBar()->showMessage(msg);
 	}
 
@@ -304,8 +304,24 @@ void CGUI::credentialsChanged(void){
 }
 
 void CGUI::showAboutDialog(void){
-	QMessageBox	msg;
-	msg.setWindowTitle(tr("About"));
-	msg.setText( "BiCoRem v1.0\n\n" + tr("Written by") + ": \n\tBenno Schilling (Client)\n\tMarkus Hinkelmann (iOS app)\n\tMike Feustel (Server)\n\n" + tr("Contact us") + ":\n\t" + "bicorem@mhinkelmann.de");
-	msg.exec();
+	QDialog	dialog;
+	QHBoxLayout l;
+	QLabel labelIcon;
+	QLabel labelText;
+	QString message;
+	QPixmap image("./bicorem128.png");
+
+	l.setSizeConstraint( QLayout::SetFixedSize );
+
+	message.append("BiCoRem v1.0\n\n" + tr("Written by") + ": \n\tBenno Schilling (Client)\n\tMarkus Hinkelmann (iOS app)\n\tMike Feustel (Server)\n\n" + tr("Contact us") + ":\n\t" + "bicorem@mhinkelmann.de");
+	
+	labelIcon.setPixmap(image);
+	labelText.setText(message);
+
+	l.addWidget(&labelIcon);
+	l.addWidget(&labelText);
+
+	dialog.setLayout(&l);
+	dialog.setWindowTitle(tr("About"));
+	dialog.exec();
 }
