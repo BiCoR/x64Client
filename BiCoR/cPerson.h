@@ -22,11 +22,19 @@ class CPerson{
 		void setVorname(QString);
 		void setNachname(QString);
 		void setGeburtstag(QString);
+		void setTelefonFest(QString);
+		void setTelefonMobil(QString);
+		void setEmail(QString);
+
 		void setPosition(unsigned int);
 
 		QString getVorname(void) const;
 		QString getNachname(void) const;
 		QString getGeburtstag(void) const;
+		QString getTelefonFest(void) const;
+		QString getTelefonMobil(void) const;
+		QString getEmail(void) const;
+
 		unsigned int getPosition(void) const;
 		unsigned int getAktuellesAlter(void) const;
 		unsigned int getNeuesAlter(void) const;
@@ -34,6 +42,7 @@ class CPerson{
 		bool hasBirthday(void) const;
 		bool birthdayComes(void) const;
 		bool birthdayIsOver(void) const;
+		bool birthdayIsNear(int days) const;
 
 		static bool compareByDate(CPerson* a,CPerson* b);
 
@@ -45,6 +54,12 @@ class CPerson{
 		QString vorname;
 		QString nachname;
 		QString geburtstag;
+
+		//Additional Info
+		QString telefonFest;
+		QString telefonMobil;
+		QString email;
+
 		unsigned int position;
 };
 

@@ -23,6 +23,16 @@ void CPerson::setGeburtstag(QString s){
 	geburtstag = s;
 }
 
+void CPerson::setTelefonFest(QString s){
+	telefonFest = s;
+}
+void CPerson::setTelefonMobil(QString s){
+	telefonMobil = s;
+}
+void CPerson::setEmail(QString s){
+	email = s;
+}
+
 QString CPerson::getVorname(void) const{
 	return vorname;
 }
@@ -32,6 +42,17 @@ QString CPerson::getNachname(void) const{
 QString CPerson::getGeburtstag(void) const{
 	return geburtstag;
 }
+QString CPerson::getTelefonFest(void) const{
+	return telefonFest;
+}
+QString CPerson::getTelefonMobil(void) const{
+	return telefonMobil;
+}
+QString CPerson::getEmail(void) const{
+	return email;
+}
+
+
 
 unsigned int CPerson::getAktuellesAlter(void) const{
 	QDate date = QDate::currentDate();
@@ -72,6 +93,14 @@ bool CPerson::birthdayIsOver(void) const{
 	return !birthdayComes();
 }
 
+bool CPerson::birthdayIsNear(int days) const{
+	QDate date = QDate::currentDate();
+	QDate birthday = QDate::fromString(geburtstag,"yyyy-MM-dd");
+	QDate birthdayThisYear(date.year(),birthday.month(),birthday.day());
+	int result = birthdayThisYear.daysTo(date);
+	return (result < 0 && abs(result) <= days);
+}
+
 QString CPerson::formatGeburtstag(void) const{
 	QDate birthday = QDate::fromString(geburtstag,"yyyy-MM-dd");
 	QString day,month;
@@ -99,7 +128,14 @@ void CPerson::convertToLeadingZeros(QDate& d, QString& day, QString& month) cons
 
 //Komparatoren
 bool CPerson::compareByDate(CPerson* a,CPerson* b){	
-	return a->formatGeburtstagSort() < b->formatGeburtstagSort();
+	//Wenn derjenige Geburtstag hat, nach links
+	if( a->hasBirthday() && !b->hasBirthday() )	return true;
+	if( !a->hasBirthday() && b->hasBirthday() )	return false;
+	//Wenn derjenige bald Geburtstag hat, nach links
+	if( a->birthdayComes() && !b->birthdayComes())	return true;
+	if( !a->birthdayComes() && b->birthdayComes())	return false;
+	//Wenn a eher als b Geburtstag hat, nach links
+	return (a->formatGeburtstagSort() < b->formatGeburtstagSort());
 }
 
 void CPerson::setPosition(unsigned int p){
@@ -108,4 +144,6 @@ void CPerson::setPosition(unsigned int p){
 unsigned int CPerson::getPosition(void) const{
 	return position;
 }
+
+
 

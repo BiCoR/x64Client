@@ -65,7 +65,15 @@ bool CXMLParser::parse(QXmlStreamReader& xmlReader, std::vector<CPerson*>* targe
 			if(tagName == "last-name")
 				targetList->back()->setNachname(xmlReader.readElementText());
 			if(tagName == "geburtsdatum")
-				targetList->back()->setGeburtstag(xmlReader.readElementText());		
+				targetList->back()->setGeburtstag(xmlReader.readElementText());	
+			if(tagName == "telefon-fest")
+				targetList->back()->setTelefonFest(xmlReader.readElementText());	
+			if(tagName == "telefon-mobil")
+				targetList->back()->setTelefonMobil(xmlReader.readElementText());	
+			if(tagName == "email")
+				targetList->back()->setEmail(xmlReader.readElementText());	
+
+			//qDebug() << tagName;
 		}
 
 		//End-Tags

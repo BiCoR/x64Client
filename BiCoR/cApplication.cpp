@@ -3,9 +3,7 @@
 // Released under the GNU General Public License v3
 // 
 
-#include <QDir>
-#include <QFileInfo>
-#include <QTranslator>
+
 #include "cApplication.h"
 
 QTranslator* CApplication::current = 0;
@@ -13,7 +11,10 @@ Translators CApplication::translators;
 
 CApplication::CApplication(int& argc, char* argv[])
 	: QApplication(argc, argv)
-{}
+{
+	QIcon icon("bicorem.png");
+	setWindowIcon(icon);
+}
 
 CApplication::~CApplication(){
 	delete current;
@@ -59,14 +60,10 @@ void CApplication::setLanguage(const QString& locale)
 {
 	// remove previous
 	if (current)
-	{
 		removeTranslator(current);
-	}
 
 	// install new
-	current = translators.value("bicor_"+locale, 0);
+	current = translators.value("bicorem_"+locale, 0);
 	if (current)
-	{
 		installTranslator(current);
-	}
 }

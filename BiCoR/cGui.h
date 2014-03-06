@@ -83,7 +83,6 @@ class CGUI : public QMainWindow{
 		QAction* actLangGerman;
 		QAction* actLangEnglish;
 
-
 		QAction* actCloseApp;
 		QAction* actNewAccount;
 		QAction* actAddUser;

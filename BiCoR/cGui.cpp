@@ -34,6 +34,7 @@ CGUI::CGUI(QWidget* parent) : QMainWindow(parent){
 	}
 	else
 		tryLogin();
+	
 
 }
 CGUI::~CGUI(){
@@ -139,8 +140,6 @@ void CGUI::createWidgets(void){
 	proxyModel->setSourceModel(model);
     tableView->setModel(proxyModel);	
 	
-	//App-Titel
-	setWindowTitle("BiCoR - Birthday Contact Reminder");
 
 	//Layout
 	setCentralWidget(tableView);
@@ -163,10 +162,15 @@ void CGUI::createConnections(void){
 	connect(http,SIGNAL(loginSuccessful(bool)),this,SLOT(loginSuccessful(bool)));
 	connect(user,SIGNAL(credentialsSaved()),this,SLOT(credentialsChanged()));
 
+	//Custom Links
+	connect(tableView,SIGNAL(clicked(const QModelIndex&)), model, SLOT(reactOnClick(const QModelIndex&)));
 
 }
 
 void CGUI::syncGUI(void){
+
+	//App-Titel
+	setWindowTitle(tr("BiCoRem - Birthday Contact Reminder"));
 
 	menu->setTitle(tr("&Menu"));
 	language->setTitle(tr("&Language"));
@@ -252,12 +256,16 @@ void CGUI::checkBirthdayMessage(void){
 	while(it != todaysBirthday.end()){
 		msg.push_back((*it)->getVorname());
 		it++;
+		if(it != todaysBirthday.end())
+			msg.push_back(", ");
 	}	
 
 	if(msg.isEmpty())
 		statusBar()->showMessage(tr("Nobody has birthday today"));
-	else
+	else{
+		msg.push_front(tr("Today's birthdays: "));
 		statusBar()->showMessage(msg);
+	}
 
 }
 
@@ -298,6 +306,6 @@ void CGUI::credentialsChanged(void){
 void CGUI::showAboutDialog(void){
 	QMessageBox	msg;
 	msg.setWindowTitle(tr("About"));
-	msg.setText(tr("Written by") + " \n\tBenno Schilling \n\t\tchillomania@gmx.de");
+	msg.setText( "BiCoRem v1.0\n\n" + tr("Written by") + ": \n\tBenno Schilling (Client)\n\tMarkus Hinkelmann (iOS app)\n\tMike Feustel (Server)\n\n" + tr("Contact us") + ":\n\t" + "bicorem@mhinkelmann.de");
 	msg.exec();
 }

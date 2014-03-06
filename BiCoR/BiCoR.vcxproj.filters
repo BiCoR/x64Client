@@ -64,9 +64,6 @@
     <CustomBuild Include="cXMLParser.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
-    <CustomBuild Include="lang\bicor_de.ts">
-      <Filter>Translation Files</Filter>
-    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GeneratedFiles\Debug\moc_cApplication.cpp">
@@ -132,5 +129,10 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="lang\bicorem_de.ts">
+      <Filter>Translation Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -10,9 +10,10 @@
 #include <QHash>
 #include <QStringList>
 #include <QDebug>
-
-class QDir;
-class QTranslator;
+#include <QDir>
+#include <QFileInfo>
+#include <QTranslator>
+#include <QIcon>
 
 typedef QHash<QString, QTranslator*> Translators;
 

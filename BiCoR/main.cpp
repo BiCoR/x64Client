@@ -16,9 +16,9 @@ int main(int argc, char *argv[])
 	CApplication application(argc, argv);
 
 	//Für Settings (Speichern und Laden) benötigt
-	application.setOrganizationName("BiCoR");
+	application.setOrganizationName("BiCoRem");
 	application.setOrganizationDomain("DE");
-	application.setApplicationName("BiCoR");
+	application.setApplicationName("BiCoRem");
 	application.setApplicationVersion("1.0");
 
 	//Lokalisierung und Internationalisierung

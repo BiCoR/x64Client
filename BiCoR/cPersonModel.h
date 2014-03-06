@@ -12,11 +12,21 @@
 #include <QAbstractTableModel>
 #include <QBrush>
 #include <QFont>
+//Link to standard mail client
+#include <QDesktopServices>
+#include <QUrl>
 
 #include "cPerson.h"
 
+#define BIRTHDAY_VERY_SOON 5 
+#define BIRTHDAY_SOON 30
+
 class CPersonModel : public QAbstractTableModel{
 	Q_OBJECT
+
+	public slots:
+		void reactOnClick(const QModelIndex&);
+
 	public:
 		CPersonModel(QObject* parent);
 		virtual ~CPersonModel();
