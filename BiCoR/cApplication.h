@@ -15,6 +15,7 @@
 #include <QTranslator>
 #include <QIcon>
 
+
 typedef QHash<QString, QTranslator*> Translators;
 
 class CApplication : public QApplication

@@ -10,6 +10,7 @@
 #include <QDebug>
 
 #include <QNetworkAccessManager>
+#include <QSslSocket>
 
 #include <QNetworkRequest>
 #include <QNetworkReply>
@@ -34,6 +35,7 @@ class CHTTP : public QObject{
 		void loginSuccessful(bool);
 		void logoutSuccessful(bool);
 		void noNetworkAvailable(void);
+		void sslProblem(void);
 
 	public slots:
 		void getFreshDataAfterLogin(void);
@@ -61,7 +63,6 @@ class CHTTP : public QObject{
 		void doGet(const QUrl& url);
 		void doPost(const QUrl& url, QUrlQuery data);
 		QUrl redirectUrl(const QUrl& possibleRedirectUrl, const QUrl& oldRedirectUrl) const;
-
 
 		QUrlQuery getParams(void);
 		QNetworkAccessManager *manager;

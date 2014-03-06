@@ -21,7 +21,6 @@ CGUI::CGUI(QWidget* parent) : QMainWindow(parent){
 	//Sprache und Login-Daten laden
 	loadSettings();
 	
-
 	syncGUI();
 
 	if(firstRun == true){
@@ -159,6 +158,7 @@ void CGUI::createConnections(void){
 
 	//Network
 	connect(http,SIGNAL(noNetworkAvailable(void)),this,SLOT(showNetworkErrorMessage(void)));
+	connect(http,SIGNAL(sslProblem(void)),this,SLOT(showSSLErrorMessage(void)));
 	connect(http,SIGNAL(loginSuccessful(bool)),this,SLOT(loginSuccessful(bool)));
 	connect(user,SIGNAL(credentialsSaved()),this,SLOT(credentialsChanged()));
 
@@ -237,6 +237,10 @@ void CGUI::setPeopleVector(std::vector<CPerson*> pl){
 void CGUI::showNetworkErrorMessage(void){
 	statusBar()->showMessage(tr("Network is currently not available... Retry in 5 seconds"));
 	QTimer::singleShot(5000, this, SLOT(tryLogin()));
+}
+
+void CGUI::showSSLErrorMessage(void){
+	statusBar()->showMessage( tr("There is a problem with your SSL-support. Please consider the shipped readme-file for further help! You have to fix this issue before you can use BiCoRem."));
 }
 
 void CGUI::checkBirthdayMessage(void){
@@ -325,3 +329,4 @@ void CGUI::showAboutDialog(void){
 	dialog.setWindowTitle(tr("About"));
 	dialog.exec();
 }
+

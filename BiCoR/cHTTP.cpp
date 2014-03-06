@@ -51,7 +51,11 @@ void CHTTP::response(QNetworkReply* reply){
 	int statuscode = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
 	//qDebug() << " State: " << state;
 	if(statuscode == 0){
-		emit noNetworkAvailable();
+		//Entweder tatsächlich WLAN/LAN aus oder SSL-Error
+		if(QSslSocket::supportsSsl() == false)
+			emit sslProblem();
+		else
+			emit noNetworkAvailable();
 		return;
 	}	
 

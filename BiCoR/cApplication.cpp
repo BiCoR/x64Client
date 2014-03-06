@@ -6,6 +6,7 @@
 
 #include "cApplication.h"
 
+
 QTranslator* CApplication::current = 0;
 Translators CApplication::translators;
 
@@ -14,6 +15,7 @@ CApplication::CApplication(int& argc, char* argv[])
 {
 	QIcon icon("./bicorem.png");
 	setWindowIcon(icon);
+
 }
 
 CApplication::~CApplication(){

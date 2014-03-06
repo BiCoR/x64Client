@@ -13,6 +13,7 @@
 
 int main(int argc, char *argv[])
 {
+
 	CApplication application(argc, argv);
 
 	//Für Settings (Speichern und Laden) benötigt

@@ -36,6 +36,8 @@ class CGUI : public QMainWindow{
 	private slots:
 		void loginSuccessful(bool);
 		void tryLogin(void);
+
+		void showSSLErrorMessage(void);
 		void showNetworkErrorMessage(void);
 
 		void renewPersonList(void);

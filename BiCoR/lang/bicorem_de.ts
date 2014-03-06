@@ -4,12 +4,12 @@
 <context>
     <name>CGUI</name>
     <message>
-        <location filename="../cGui.cpp" line="29"/>
+        <location filename="../cGui.cpp" line="28"/>
         <source>First run of Application</source>
         <translation>Erster Programmstart</translation>
     </message>
     <message>
-        <location filename="../cGui.cpp" line="29"/>
+        <location filename="../cGui.cpp" line="28"/>
         <source>Create a new Account?</source>
         <translation>Neuen Account erstellen?</translation>
     </message>
@@ -69,7 +69,12 @@
         <translation>&amp;Deutsch</translation>
     </message>
     <message>
-        <location filename="../cGui.cpp" line="266"/>
+        <location filename="../cGui.cpp" line="243"/>
+        <source>There is a problem with your SSL-support. Please consider the shipped readme-file for further help! You have to fix this issue before you can use BiCoRem.</source>
+        <translation>Es gibt ein Problem mit Ihrer SSL-Unterstützung. Bitte folgen Sie den Hinweisen in der beigefügten readme-Datei! Sie müssen dieses Problem beheben, damit BiCoRem richtig funktioniert. </translation>
+    </message>
+    <message>
+        <location filename="../cGui.cpp" line="270"/>
         <source>Today&apos;s birthdays</source>
         <translation>Heutige Geburtstage</translation>
     </message>
@@ -78,7 +83,7 @@
         <translation type="obsolete">Heutige Geburtstage:</translation>
     </message>
     <message>
-        <location filename="../cGui.cpp" line="316"/>
+        <location filename="../cGui.cpp" line="320"/>
         <source>Contact us</source>
         <translation>Kontakt</translation>
     </message>
@@ -113,17 +118,17 @@
         <translation>Das Netzwerk ist momentan nicht verfügbar... Neuer Versuch in 5 Sekunden</translation>
     </message>
     <message>
-        <location filename="../cGui.cpp" line="264"/>
+        <location filename="../cGui.cpp" line="268"/>
         <source>Nobody has birthday today</source>
         <translation>Heute hat niemand Geburtstag</translation>
     </message>
     <message>
-        <location filename="../cGui.cpp" line="325"/>
+        <location filename="../cGui.cpp" line="329"/>
         <source>About</source>
         <translation>Über</translation>
     </message>
     <message>
-        <location filename="../cGui.cpp" line="316"/>
+        <location filename="../cGui.cpp" line="320"/>
         <source>Written by</source>
         <translation>Entwickler</translation>
     </message>

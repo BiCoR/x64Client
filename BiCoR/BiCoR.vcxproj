@@ -256,6 +256,15 @@
   <ItemGroup>
     <None Include="lang\bicorem_de.ts" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="BiCoR.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="BiCoRem32.ico" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{B12702AD-ABFB-343A-A199-8E24837244A3}</ProjectGuid>
     <Keyword>Qt4VSv1.0</Keyword>
