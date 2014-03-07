@@ -7,11 +7,8 @@
 #define APPLICATION_H
 
 #include <QApplication>
-#include <QHash>
-#include <QStringList>
 #include <QDebug>
 #include <QDir>
-#include <QFileInfo>
 #include <QTranslator>
 #include <QIcon>
 

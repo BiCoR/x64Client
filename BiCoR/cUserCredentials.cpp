@@ -6,7 +6,7 @@
 #include "cUserCredentials.h"
 
 CUserCredentials::CUserCredentials(QWidget* parent) : QDialog(parent){
-	
+
 	setModal(true);
 	setMinimumWidth(400);
 
@@ -16,6 +16,7 @@ CUserCredentials::CUserCredentials(QWidget* parent) : QDialog(parent){
 	leEmail = new QLineEdit(this);
 	lePassword = new QLineEdit(this);
 	lePassword->setEchoMode(QLineEdit::Password);
+	chkSavePassword = new QCheckBox(this);
 
 	gb = new QGroupBox(this);
 	QGridLayout* innerLayout = new QGridLayout();
@@ -31,6 +32,7 @@ CUserCredentials::CUserCredentials(QWidget* parent) : QDialog(parent){
 	innerLayout->addWidget(leEmail,0,1);
 	innerLayout->addWidget(lPassword,1,0);
 	innerLayout->addWidget(lePassword,1,1);
+	innerLayout->addWidget(chkSavePassword,2,0,1,2,Qt::AlignRight);
 	
 	buttonLayout->addWidget(ok);
 	buttonLayout->addWidget(cancel);
@@ -44,7 +46,7 @@ CUserCredentials::CUserCredentials(QWidget* parent) : QDialog(parent){
 	QObject::connect(cancel,SIGNAL(clicked()),this,SLOT(reject()));
 
 	translate();
-
+	
 
 }
 CUserCredentials::~CUserCredentials(){}
@@ -52,11 +54,15 @@ CUserCredentials::~CUserCredentials(){}
 void CUserCredentials::sync(void){
 	leEmail->setText(getEmail());
 	lePassword->setText(getPassword());
+	chkSavePassword->setChecked(getSavePasswordPermanently());
 }
 
 void CUserCredentials::showAccountDialog(void){
 	sync();
-	show();
+	//erleichterte Bedienung beim einloggen
+	if( ! email.isEmpty())
+		lePassword->setFocus();
+	exec();
 }
 
 QString CUserCredentials::getEmail(void){
@@ -65,6 +71,9 @@ QString CUserCredentials::getEmail(void){
 QString CUserCredentials::getPassword(void){
 	return password;
 }
+bool CUserCredentials::getSavePasswordPermanently(void){
+	return savePasswordPermanently;
+}
 
 void CUserCredentials::setEmail(QString s){
 	email = s;
@@ -72,10 +81,14 @@ void CUserCredentials::setEmail(QString s){
 void CUserCredentials::setPassword(QString s){
 	password = s;
 }
+void CUserCredentials::setSavePasswordPermanently(bool b){
+	savePasswordPermanently = b;
+}
 
 void CUserCredentials::saveExit(void){
 	setEmail(leEmail->text());
 	setPassword(lePassword->text());
+	setSavePasswordPermanently(chkSavePassword->isChecked());
 	accept();
 	emit credentialsSaved();
 }
@@ -83,6 +96,7 @@ void CUserCredentials::saveExit(void){
 void CUserCredentials::translate(void){
 	lEmail->setText(tr("Email") + ": ");
 	lPassword->setText(tr("Password") + ": ");
+	chkSavePassword->setText(tr("Save password permanently (not recommended)"));
 	gb->setTitle(tr("Account information"));
 	ok->setText(tr("Save"));
 	cancel->setText(tr("Cancel"));

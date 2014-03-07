@@ -13,18 +13,7 @@
 
 int main(int argc, char *argv[])
 {
-
 	CApplication application(argc, argv);
-
-	//Für Settings (Speichern und Laden) benötigt
-	application.setOrganizationName("BiCoRem");
-	application.setOrganizationDomain("DE");
-	application.setApplicationName("BiCoRem");
-	application.setApplicationVersion("1.0");
-
-	//Lokalisierung und Internationalisierung
-	application.loadTranslations("./lang");
-
 	CGUI w;
 	w.showMaximized();
 	int i = application.exec();

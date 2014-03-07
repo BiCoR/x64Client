@@ -13,9 +13,16 @@ Translators CApplication::translators;
 CApplication::CApplication(int& argc, char* argv[])
 	: QApplication(argc, argv)
 {
+	//Icon
 	QIcon icon("./bicorem.png");
-	setWindowIcon(icon);
-
+	setWindowIcon(icon);	
+	//Für Settings (Speichern und Laden) benötigt
+	setOrganizationName("BiCoRem");
+	setOrganizationDomain("DE");
+	setApplicationName("BiCoRem");
+	setApplicationVersion("BiCoRem v1.1");
+	//Lokalisierung und Internationalisierung
+	loadTranslations("./lang");
 }
 
 CApplication::~CApplication(){

@@ -12,9 +12,7 @@
 #include <QHeaderView>
 #include <QSortFilterProxyModel>
 #include <QAction>
-#include <QTimer>
 #include <QStatusBar>
-#include <QDate>
 #include <QMenuBar>
 #include <QMenu>
 #include <QSettings>
@@ -72,7 +70,6 @@ class CGUI : public QMainWindow{
 		QTableView* tableView;
 	    CPersonModel* model;
 		QSortFilterProxyModel* proxyModel;
-		QTimer* retryConnectionTimer;
 
 		QMenuBar* menuBar;
 		QMenu* menu;

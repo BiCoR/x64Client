@@ -92,7 +92,8 @@ void CHTTP::response(QNetworkReply* reply){
 	}
 	else if(state == 3){		
 		xmlContent = reply->readAll().data();
-		emit loginSuccessful(true);
+		if(statuscode == 200)
+			emit loginSuccessful(true);
 	}
 	else
 		qDebug() << "Unknown State";

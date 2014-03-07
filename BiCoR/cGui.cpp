@@ -47,21 +47,30 @@ void CGUI::loadSettings(void){
 	
     QSettings settings;
     QString email = settings.value("email", "user@example.org").toString();
-	QString password = settings.value("password", "user@example.org").toString();
+	QString password = settings.value("password", "").toString();
+	if(password.isEmpty())
+		user->setSavePasswordPermanently(false);
+	else		
+		user->setSavePasswordPermanently(true);
+	user->setPassword(password);
+	user->setEmail(email);
+
 	firstRun = settings.value("firstRun", true).toBool();
 	actLangGerman->setChecked(settings.value("germanSelected", false).toBool());
 	actLangEnglish->setChecked(settings.value("englishSelected", true).toBool());
 
 	triggerSelectedLanguage();
 
-	user->setEmail(email);
-	user->setPassword(password);
+	
     
 }
 void CGUI::saveSettings(void){
 	QSettings settings;
     settings.setValue("email", user->getEmail());
-	settings.setValue("password", user->getPassword());
+	if(user->getSavePasswordPermanently())
+		settings.setValue("password", user->getPassword());
+	else
+		settings.setValue("password", "");
 	settings.setValue("germanSelected", actLangGerman->isChecked());
 	settings.setValue("englishSelected", actLangEnglish->isChecked());
 
@@ -121,13 +130,9 @@ void CGUI::createMenu(void){
 }
 void CGUI::createWidgets(void){
 	
-	//Timer
-	retryConnectionTimer = new QTimer(this);
-
 	//View
 	tableView = new QTableView(this);
 	tableView->setSortingEnabled(true);
-	tableView->horizontalHeader()->setStretchLastSection(true);
 	tableView->horizontalHeader()->setStretchLastSection(true);
 
 	//Create and fill Model
@@ -138,7 +143,7 @@ void CGUI::createWidgets(void){
 	proxyModel = new QSortFilterProxyModel(tableView);		
 	proxyModel->setSourceModel(model);
     tableView->setModel(proxyModel);	
-	
+	tableView->setVisible(false);
 
 	//Layout
 	setCentralWidget(tableView);
@@ -149,7 +154,9 @@ void CGUI::createConnections(void){
 	connect(actNewAccount,SIGNAL(triggered()),this,SLOT(openBrowserNew()));
 	connect(actAddUser,SIGNAL(triggered()),this,SLOT(openBrowserEdit()));
 
+	//Dialogs
 	connect(actSetCredentials,SIGNAL(triggered()),user,SLOT(showAccountDialog()));
+	connect(user,SIGNAL(credentialsSaved()),this,SLOT(credentialsChanged()));
 	connect(actAbout,SIGNAL(triggered()),this,SLOT(showAboutDialog()));
 
 	//Language
@@ -160,11 +167,9 @@ void CGUI::createConnections(void){
 	connect(http,SIGNAL(noNetworkAvailable(void)),this,SLOT(showNetworkErrorMessage(void)));
 	connect(http,SIGNAL(sslProblem(void)),this,SLOT(showSSLErrorMessage(void)));
 	connect(http,SIGNAL(loginSuccessful(bool)),this,SLOT(loginSuccessful(bool)));
-	connect(user,SIGNAL(credentialsSaved()),this,SLOT(credentialsChanged()));
 
-	//Custom Links
+	//Custom Links (z.B.: E-Mail-Client)
 	connect(tableView,SIGNAL(clicked(const QModelIndex&)), model, SLOT(reactOnClick(const QModelIndex&)));
-
 }
 
 void CGUI::syncGUI(void){
@@ -176,7 +181,7 @@ void CGUI::syncGUI(void){
 	language->setTitle(tr("&Language"));
 	account->setTitle(tr("&Account"));
 	people->setTitle(tr("&People"));
-	about->setTitle(tr("A&bout"));
+	about->setTitle(tr("&Help"));
 
 	actNewAccount->setText(tr("&Create"));
 	actAddUser->setText(tr("&Manage"));
@@ -187,23 +192,32 @@ void CGUI::syncGUI(void){
 	actAbout->setText(tr("A&bout"));
 
 	user->translate();
+
+	statusBar()->showMessage(CApplication::applicationVersion());
+	
 }
 
 void CGUI::tryLogin(void){
-	statusBar()->showMessage(tr("Try to login onto Webservice..."));
-	http->login();
+	if(user->getPassword().isEmpty() || user->getEmail().isEmpty())
+		loginSuccessful(false);
+	else{
+		statusBar()->showMessage(tr("Try to login onto Webservice..."));
+		http->login();
+	}
 }
 
 void CGUI::loginSuccessful(bool b){
 	if(!b){
-		statusBar()->showMessage(tr("Invalid E-Mail or Password..."));
+		statusBar()->showMessage(tr("Login failed..."));
 		actAddUser->setEnabled(false);
+		tableView->setVisible(false);
 		user->showAccountDialog();
 	}
 	else
 	{
 		statusBar()->showMessage(tr("Login successful..."));
 		actAddUser->setEnabled(true);
+		tableView->setVisible(true);
 		renewPersonList();
 	}
 }
@@ -317,7 +331,7 @@ void CGUI::showAboutDialog(void){
 
 	l.setSizeConstraint( QLayout::SetFixedSize );
 
-	message.append("BiCoRem v1.0\n\n" + tr("Written by") + ": \n\tBenno Schilling (Client)\n\tMarkus Hinkelmann (iOS app)\n\tMike Feustel (Server)\n\n" + tr("Contact us") + ":\n\t" + "bicorem@mhinkelmann.de");
+	message.append( "Version:\n\t" + CApplication::applicationVersion() + "\n\n" + tr("Written by") + ": \n\tBenno Schilling (Client)\n\tMarkus Hinkelmann (iOS app)\n\tMike Feustel (Server)\n\n" + tr("Contact us") + ":\n\t" + "bicorem@mhinkelmann.de");
 	
 	labelIcon.setPixmap(image);
 	labelText.setText(message);

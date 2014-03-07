@@ -15,6 +15,7 @@
 #include <QGroupBox>
 #include <QLayout>
 #include <QPushButton>
+#include <QCheckBox>
 
 class CUserCredentials : public QDialog{
 
@@ -29,9 +30,11 @@ class CUserCredentials : public QDialog{
 
 		QString getEmail(void);
 		QString getPassword(void);
+		bool getSavePasswordPermanently(void);
 
 		void setEmail(QString);
 		void setPassword(QString);
+		void setSavePasswordPermanently(bool);
 
 		void translate(void);
 
@@ -47,14 +50,15 @@ class CUserCredentials : public QDialog{
 
 		QString email;
 		QString password;
+		bool savePasswordPermanently;
 
 		QLabel* lEmail;
-		QLabel* lPassword;
-		
+		QLabel* lPassword;		
 
 		QGroupBox* gb;
 		QLineEdit* leEmail;
 		QLineEdit* lePassword;
+		QCheckBox* chkSavePassword;
 
 		QPushButton* ok;
 		QPushButton* cancel;

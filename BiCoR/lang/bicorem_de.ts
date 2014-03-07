@@ -14,67 +14,77 @@
         <translation>Neuen Account erstellen?</translation>
     </message>
     <message>
-        <location filename="../cGui.cpp" line="173"/>
+        <location filename="../cGui.cpp" line="178"/>
         <source>BiCoRem - Birthday Contact Reminder</source>
         <translation>BiCoRem - Birthday Contact Reminder</translation>
     </message>
     <message>
-        <location filename="../cGui.cpp" line="175"/>
+        <location filename="../cGui.cpp" line="180"/>
         <source>&amp;Menu</source>
         <translation>&amp;Menü</translation>
     </message>
     <message>
-        <location filename="../cGui.cpp" line="176"/>
+        <location filename="../cGui.cpp" line="181"/>
         <source>&amp;Language</source>
         <translation>&amp;Sprache</translation>
     </message>
     <message>
-        <location filename="../cGui.cpp" line="177"/>
+        <location filename="../cGui.cpp" line="182"/>
         <source>&amp;Account</source>
         <translation>&amp;Account</translation>
     </message>
     <message>
-        <location filename="../cGui.cpp" line="178"/>
+        <location filename="../cGui.cpp" line="183"/>
         <source>&amp;People</source>
         <translation>&amp;Personen</translation>
     </message>
     <message>
-        <location filename="../cGui.cpp" line="181"/>
+        <location filename="../cGui.cpp" line="184"/>
+        <source>&amp;Help</source>
+        <translation>&amp;Hilfe</translation>
+    </message>
+    <message>
+        <location filename="../cGui.cpp" line="186"/>
         <source>&amp;Create</source>
         <translation>&amp;Erstellen</translation>
     </message>
     <message>
-        <location filename="../cGui.cpp" line="182"/>
+        <location filename="../cGui.cpp" line="187"/>
         <source>&amp;Manage</source>
         <translation>&amp;Verwalten</translation>
     </message>
     <message>
-        <location filename="../cGui.cpp" line="183"/>
+        <location filename="../cGui.cpp" line="188"/>
         <source>Close Application</source>
         <translation>Schließen</translation>
     </message>
     <message>
-        <location filename="../cGui.cpp" line="184"/>
+        <location filename="../cGui.cpp" line="189"/>
         <source>&amp;Edit</source>
         <translation>&amp;Bearbeiten</translation>
     </message>
     <message>
-        <location filename="../cGui.cpp" line="185"/>
+        <location filename="../cGui.cpp" line="190"/>
         <source>&amp;English</source>
         <translation>&amp;English</translation>
     </message>
     <message>
-        <location filename="../cGui.cpp" line="186"/>
+        <location filename="../cGui.cpp" line="191"/>
         <source>&amp;Deutsch</source>
         <translation>&amp;Deutsch</translation>
     </message>
     <message>
-        <location filename="../cGui.cpp" line="243"/>
+        <location filename="../cGui.cpp" line="211"/>
+        <source>Login failed...</source>
+        <translation>Login fehlgeschlagen...</translation>
+    </message>
+    <message>
+        <location filename="../cGui.cpp" line="257"/>
         <source>There is a problem with your SSL-support. Please consider the shipped readme-file for further help! You have to fix this issue before you can use BiCoRem.</source>
         <translation>Es gibt ein Problem mit Ihrer SSL-Unterstützung. Bitte folgen Sie den Hinweisen in der beigefügten readme-Datei! Sie müssen dieses Problem beheben, damit BiCoRem richtig funktioniert. </translation>
     </message>
     <message>
-        <location filename="../cGui.cpp" line="270"/>
+        <location filename="../cGui.cpp" line="284"/>
         <source>Today&apos;s birthdays</source>
         <translation>Heutige Geburtstage</translation>
     </message>
@@ -83,18 +93,17 @@
         <translation type="obsolete">Heutige Geburtstage:</translation>
     </message>
     <message>
-        <location filename="../cGui.cpp" line="320"/>
+        <location filename="../cGui.cpp" line="334"/>
         <source>Contact us</source>
         <translation>Kontakt</translation>
     </message>
     <message>
-        <location filename="../cGui.cpp" line="179"/>
-        <location filename="../cGui.cpp" line="187"/>
+        <location filename="../cGui.cpp" line="192"/>
         <source>A&amp;bout</source>
         <translation>&amp;Über</translation>
     </message>
     <message>
-        <location filename="../cGui.cpp" line="193"/>
+        <location filename="../cGui.cpp" line="204"/>
         <source>Try to login onto Webservice...</source>
         <translation>Versuche Anmeldung am Webservice... </translation>
     </message>
@@ -103,32 +112,31 @@
         <translation type="obsolete">Versuche Anmeldung am Webservice... </translation>
     </message>
     <message>
-        <location filename="../cGui.cpp" line="199"/>
         <source>Invalid E-Mail or Password...</source>
-        <translation>E-Mail oder Passwort nicht korrekt...</translation>
+        <translation type="obsolete">E-Mail oder Passwort nicht korrekt...</translation>
     </message>
     <message>
-        <location filename="../cGui.cpp" line="205"/>
+        <location filename="../cGui.cpp" line="218"/>
         <source>Login successful...</source>
         <translation>Login erfolgreich...</translation>
     </message>
     <message>
-        <location filename="../cGui.cpp" line="238"/>
+        <location filename="../cGui.cpp" line="252"/>
         <source>Network is currently not available... Retry in 5 seconds</source>
         <translation>Das Netzwerk ist momentan nicht verfügbar... Neuer Versuch in 5 Sekunden</translation>
     </message>
     <message>
-        <location filename="../cGui.cpp" line="268"/>
+        <location filename="../cGui.cpp" line="282"/>
         <source>Nobody has birthday today</source>
         <translation>Heute hat niemand Geburtstag</translation>
     </message>
     <message>
-        <location filename="../cGui.cpp" line="329"/>
+        <location filename="../cGui.cpp" line="343"/>
         <source>About</source>
         <translation>Über</translation>
     </message>
     <message>
-        <location filename="../cGui.cpp" line="320"/>
+        <location filename="../cGui.cpp" line="334"/>
         <source>Written by</source>
         <translation>Entwickler</translation>
     </message>
@@ -187,27 +195,32 @@
 <context>
     <name>CUserCredentials</name>
     <message>
-        <location filename="../cUserCredentials.cpp" line="84"/>
+        <location filename="../cUserCredentials.cpp" line="97"/>
         <source>Email</source>
         <translation>E-Mail</translation>
     </message>
     <message>
-        <location filename="../cUserCredentials.cpp" line="85"/>
+        <location filename="../cUserCredentials.cpp" line="98"/>
         <source>Password</source>
         <translation>Passwort</translation>
     </message>
     <message>
-        <location filename="../cUserCredentials.cpp" line="86"/>
+        <location filename="../cUserCredentials.cpp" line="99"/>
+        <source>Save password permanently (not recommended)</source>
+        <translation>Passwort permanent speichern (nicht empfohlen)</translation>
+    </message>
+    <message>
+        <location filename="../cUserCredentials.cpp" line="100"/>
         <source>Account information</source>
         <translation>Account-Informationen</translation>
     </message>
     <message>
-        <location filename="../cUserCredentials.cpp" line="87"/>
+        <location filename="../cUserCredentials.cpp" line="101"/>
         <source>Save</source>
         <translation>Speichern</translation>
     </message>
     <message>
-        <location filename="../cUserCredentials.cpp" line="88"/>
+        <location filename="../cUserCredentials.cpp" line="102"/>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>
