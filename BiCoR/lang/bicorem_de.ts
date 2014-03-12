@@ -144,42 +144,42 @@
 <context>
     <name>CPersonModel</name>
     <message>
-        <location filename="../cPersonModel.cpp" line="106"/>
+        <location filename="../cPersonModel.cpp" line="109"/>
         <source>First name</source>
         <translation>Vorname</translation>
     </message>
     <message>
-        <location filename="../cPersonModel.cpp" line="109"/>
+        <location filename="../cPersonModel.cpp" line="112"/>
         <source>Surname</source>
         <translation>Nachname</translation>
     </message>
     <message>
-        <location filename="../cPersonModel.cpp" line="112"/>
+        <location filename="../cPersonModel.cpp" line="115"/>
         <source>Birthday</source>
         <translation>Geburtstag</translation>
     </message>
     <message>
-        <location filename="../cPersonModel.cpp" line="115"/>
+        <location filename="../cPersonModel.cpp" line="118"/>
         <source>Current age</source>
         <translation>Aktuelles Alter</translation>
     </message>
     <message>
-        <location filename="../cPersonModel.cpp" line="121"/>
+        <location filename="../cPersonModel.cpp" line="124"/>
         <source>Telephone</source>
         <translation>Festnetz</translation>
     </message>
     <message>
-        <location filename="../cPersonModel.cpp" line="118"/>
+        <location filename="../cPersonModel.cpp" line="121"/>
         <source>Mobile</source>
         <translation>Handy</translation>
     </message>
     <message>
-        <location filename="../cPersonModel.cpp" line="103"/>
+        <location filename="../cPersonModel.cpp" line="106"/>
         <source>Birthday soon</source>
         <translation>Bald Geburtstag</translation>
     </message>
     <message>
-        <location filename="../cPersonModel.cpp" line="124"/>
+        <location filename="../cPersonModel.cpp" line="127"/>
         <source>Email</source>
         <translation>E-Mail</translation>
     </message>

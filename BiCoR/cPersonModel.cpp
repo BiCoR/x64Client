@@ -75,7 +75,10 @@ QVariant CPersonModel::data(const QModelIndex &index, int role) const
 				return QString("%1").arg( p->formatGeburtstag());
 			break;
 			case 4:
-				return QString("%1").arg(p->getAktuellesAlter());
+				if(p->birthdayIsFuture())
+					return QString("---");
+				else
+					return QString("%1").arg(p->getAktuellesAlter());
 			break;
 			case 5:
 				return QString("%1").arg(p->getTelefonMobil());

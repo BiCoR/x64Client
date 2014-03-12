@@ -101,6 +101,12 @@ bool CPerson::birthdayIsNear(int days) const{
 	return (result < 0 && abs(result) <= days);
 }
 
+bool CPerson::birthdayIsFuture(void) const{
+	QDate date = QDate::currentDate();
+	QDate birthday = QDate::fromString(geburtstag,"yyyy-MM-dd");
+	return (date.daysTo(birthday) > 0);
+}
+
 QString CPerson::formatGeburtstag(void) const{
 	QDate birthday = QDate::fromString(geburtstag,"yyyy-MM-dd");
 	QString day,month;

@@ -43,6 +43,7 @@ class CPerson{
 		bool birthdayComes(void) const;
 		bool birthdayIsOver(void) const;
 		bool birthdayIsNear(int days) const;
+		bool birthdayIsFuture(void) const;
 
 		static bool compareByDate(CPerson* a,CPerson* b);
 
